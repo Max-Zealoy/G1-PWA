@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
+import Footer from './pages/Footer'
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           </a>
         </p>
       </header>
+      <Footer></Footer>
     </div>
   )
 }
