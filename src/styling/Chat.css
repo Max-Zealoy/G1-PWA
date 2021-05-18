@@ -1,0 +1,16 @@
+    
+    .ChatTitle{
+        display: block;
+        text-align: center;
+    }
+  
+    .message-list{
+        display: block;
+        text-align: center;
+        
+    }
+
+    form{
+        display: block;
+        text-align: center; 
+    }

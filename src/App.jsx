@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import logo from './logo.svg'
 import Footer from './components/Footer'
 //Import Libraries
-import React from 'react'
 import { BrowserRouter, Route, Switch, } from "react-router-dom";
 
 //Import CSS
@@ -10,7 +9,6 @@ import './App.css'
 
 //Import Components
 import SimpleButtons from './components/Buttons'
-import Footer from './components/Footer'
 //Import Pages
 import ChatPage from './pages/ChatPage';
 import ActivityPage from './pages/ActivityPage';
