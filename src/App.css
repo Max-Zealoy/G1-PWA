@@ -1,0 +1,33 @@
+.App text,p,input{
+font-family: 'Quicksand', sans-serif;
+}
+
+/* Buttons */ 
+
+.ChatNoticeGrid{
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+align-items: center;
+grid-auto-rows: minmax(100px, auto);
+margin: 0 auto;
+margin-top: 0px;
+
+}
+
+.Bubble{
+margin: auto;
+width: 70px;
+grid-column: 11;
+grid-row: 1;
+}
+
+
+.Megaphone{
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto;
+    width: 68px;
+    }
+
+
+/* Other page*/ 

@@ -1,0 +1,35 @@
+.SearchPage{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    align-items: center;
+    grid-auto-rows: minmax(100px, auto);
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+.SearchPage input{
+   height: 60px;
+   border-radius: 16px;
+   border: none;
+   width: 350px;
+   background: #F6F4F4;
+   padding-left: 50px;
+   grid-column: 7;
+   grid-row: 1;
+   font-size: x-large;
+   outline: 0;
+   outline-color: #F6F4F4;
+   -moz-outline-radius: 20px;
+    box-shadow: 0 0 3pt 2pt #e5e2e2;;
+
+}
+
+
+.SearchPage img {
+    grid-column: 7;
+    grid-row: 1;
+    width: 35px;
+    margin-left: 5px;
+}
+
+ 
