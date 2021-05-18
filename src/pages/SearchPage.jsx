@@ -1,9 +1,17 @@
 import React from 'react'
+import '../styling/SearchPage.css'
+import Search from '../images/Buttons/Search.png'
 
 export default function SearchPage() {
     return (
-        <div>
-            <h1>Landing/Search Page</h1>
+        <div className="SearchPage">
+             <input
+            type="text"
+            placeholder="Search..."
+            name="s" 
+            
+        />
+        <img src={Search} className="SearchImage"></img> 
         </div>
     )
 }
