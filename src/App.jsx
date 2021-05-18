@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import logo from './logo.svg'
-import Footer from './pages/Footer'
+import Footer from './components/Footer'
 import './App.css'
 import buttons from './components/Buttons'
 
