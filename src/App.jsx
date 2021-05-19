@@ -21,19 +21,28 @@ function App() {
 
 
   return (
-    
+
     <div className="App">
 
+
+
+
+
+
     <BrowserRouter>
+      
+    
 
       <header/>
       <SimpleButtons/>
 
       <Switch>
       <Route exact path="/" component={SearchPage}  />
+      <Route exact path="/Login" component={LoginPage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
-      <Route exact path="/Login" component={LoginPage}  />
+  
+
       </Switch> 
 
       <Footer/>

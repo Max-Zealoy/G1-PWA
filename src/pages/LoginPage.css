@@ -3,6 +3,7 @@
     width: 50%;
     text-align: center;
     margin: auto;
+    border-radius: 10px;
 }
 
 
@@ -26,5 +27,13 @@
 }
 
 #CreateAccount {
+    border-radius: 10px;
+}
+
+#UserName {
+    border-radius: 10px;
+}
+
+#PassWord {
     border-radius: 10px;
 }
