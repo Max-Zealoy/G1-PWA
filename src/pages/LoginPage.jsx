@@ -8,8 +8,8 @@ function LoginPage() {
             <h2 id="TitleLogin">hello Catster!</h2>
             <img src={cat} alt="" width= "40%" />
                 <form action="LoginForm" id="LoginForm">
-            <input type="text" id="UserName" /> <br />
-            <input type="text" id="PassWord" /> <br />
+           Meowstername <br /> <input type="text" id="UserName" /> <br />
+            Meowword <br /><input type="text" id="PassWord" /> <br />
 
             <input type="button" value="Login" id="LoginButton"  />
              <br />
