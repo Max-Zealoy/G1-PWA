@@ -24,16 +24,20 @@
 
 #LoginButton {
      border-radius: 10px;
+     margin-top: 2%;
 }
 
-#CreateAccount {
+#CreateAccountButton {
     border-radius: 10px;
+    margin-bottom: 2%;
 }
 
 #UserName {
     border-radius: 10px;
+    margin-top: 2%;
 }
 
 #PassWord {
     border-radius: 10px;
+    margin-top: 2%;
 }
