@@ -1,11 +1,11 @@
-import './Loginpage.css'
+import './LoginPage.css'
 import React from 'react'
 
 
 function LoginPage() {
     return (
-        <div>
-            
+        <div id="lDiv">
+            <h2>hello Catster!</h2>
         </div>
     )
 }

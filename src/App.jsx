@@ -13,6 +13,7 @@ import SimpleButtons from './components/Buttons'
 import ChatPage from './pages/ChatPage';
 import ActivityPage from './pages/ActivityPage';
 import SearchPage from './pages/SearchPage';
+import LoginPage from './pages/LoginPage';
 
 
 
@@ -32,7 +33,7 @@ function App() {
       <Route exact path="/" component={SearchPage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
-
+      <Route exact path="/Login" component={LoginPage}  />
       </Switch> 
 
       <Footer/>
