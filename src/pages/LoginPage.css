@@ -1,3 +1,39 @@
-.LoginPage {
- background-color: #FFDF8D;
+#LoginBody {
+    background-color:#FFDF8D;
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+}
+
+
+#TitleLogin {
+    color: rgb(255, 255, 255);
+}
+
+#LoginBody.h3 {
+    color: green;
+}
+#UserName{
+    color: blue;
+}
+
+#LoginForm {
+    text-align: center;
+}
+
+#LoginButton {
+     border-radius: 10px;
+}
+
+#CreateAccount {
+    border-radius: 10px;
+}
+
+#UserName {
+    border-radius: 10px;
+}
+
+#PassWord {
+    border-radius: 10px;
 }

@@ -13,6 +13,7 @@ import SimpleButtons from './components/Buttons'
 import ChatPage from './pages/ChatPage';
 import ActivityPage from './pages/ActivityPage';
 import SearchPage from './pages/SearchPage';
+import LoginPage from './pages/LoginPage';
 
 
 
@@ -20,18 +21,27 @@ function App() {
 
 
   return (
-    
+
     <div className="App">
 
+
+
+
+
+
     <BrowserRouter>
+      
+    
 
       <header/>
       <SimpleButtons/>
 
       <Switch>
       <Route exact path="/" component={SearchPage}  />
+      <Route exact path="/Login" component={LoginPage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
+  
 
       </Switch> 
 
