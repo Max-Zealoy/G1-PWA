@@ -1,15 +1,30 @@
-body {
-    background-color: #FFDF8D;
-}
-
-#lDiv {
-    background-color: white;
+#LoginBody {
+    background-color:#FFDF8D;
     width: 50%;
     text-align: center;
-    margin-left: 20px auto;
+    margin: auto;
 }
 
 
-h2 {
-    color: #F79329;
+#TitleLogin {
+    color: rgb(255, 255, 255);
+}
+
+#LoginBody.h3 {
+    color: green;
+}
+#UserName{
+    color: blue;
+}
+
+#LoginForm {
+    text-align: center;
+}
+
+#LoginButton {
+     border-radius: 10px;
+}
+
+#CreateAccount {
+    border-radius: 10px;
 }

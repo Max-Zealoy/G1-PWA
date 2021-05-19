@@ -4,8 +4,14 @@ import React from 'react'
 
 function LoginPage() {
     return (
-        <div id="lDiv">
-            <h2>hello Catster!</h2>
+        <div id="LoginBody">
+            <h2 id="TitleLogin">hello Catster!</h2>
+                <form action="LoginForm" id="LoginForm">
+            <input type="text" /> <br />
+            <input type="text" /> <br />
+            <input type="button" value="Login" id="LoginButton"  /> <br />
+            <input type="button" value="Here!" id="CreateAccount"/>
+                </form>
         </div>
     )
 }
