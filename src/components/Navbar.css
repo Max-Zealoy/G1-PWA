@@ -13,6 +13,17 @@ li{
 a{
     text-decoration: none;
 }
+
+.catlogo{
+    height: 50px;
+    position: absolute;
+    display: flex;
+    left: 70px;
+    top: 1px
+
+}
+
+
 .logoText{
     color: #F79329;
     font-family: Quicksand;
@@ -49,7 +60,7 @@ nav .nav-links a {
 
 
 nav .nav-links a:hover{
-   background-color: #fff;
+   border-bottom: 1px solid black;
   }
 
 

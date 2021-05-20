@@ -15,8 +15,7 @@ import ChatPage from './pages/ChatPage';
 import ActivityPage from './pages/ActivityPage';
 import SearchPage from './pages/SearchPage';
 import LoginPage from './pages/LoginPage';
-import CreatePage from './pages/CreateAccountPage'
-
+import CreatePage from './pages/CreateAccountPage';
 function App() {
 
   return (
@@ -35,7 +34,7 @@ function App() {
       <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
-  
+      
 
       </Switch> 
 
