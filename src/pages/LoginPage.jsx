@@ -25,8 +25,10 @@ function LoginPage() {
               New user? Join our cat army 
              <br />
 
-           <input type="button" value="Here!" id="CreateAccountButton"/>
+             <Link to='../CreatePage'><input type="button" value="Here!" id="CreateAccountButton"/>
+             </Link>
                 </form>
+                
         </div>
     )
 }
