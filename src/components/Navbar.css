@@ -13,6 +13,11 @@ li{
 a{
     text-decoration: none;
 }
+.logoText{
+    color: #F79329;
+    font-family: Quicksand;
+    font-size: 30px;
+}
 
 nav{
     display: flex;
@@ -39,17 +44,16 @@ nav .nav-links a {
     font-size: 18px;
     font-weight: normal;
     cursor: pointer;
-    
-    
 
 }
+
 
 nav .nav-links a:hover{
-    border-bottom: 1px solid black;
-  
-}
+   background-color: #fff;
+  }
 
-nav .burger {
+
+  nav .burger {
     font-size: 28px;
     display: none;
     cursor: pointer;
