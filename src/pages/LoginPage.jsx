@@ -1,6 +1,11 @@
-import './LoginPage.css'
+/* import */
 import React from 'react'
 import cat from '../images/Buttons/catlogo.png'
+
+/* import pages */
+import './LoginPage.css'
+import CreateAccountPage from './CreateAccountPage'
+
 
 function LoginPage() {
     return (
@@ -15,7 +20,8 @@ function LoginPage() {
              <br />
               New user? Join our cat army 
              <br />
-            <input type="button" value="Here!" id="CreateAccountButton"/>
+
+           <input type="button" value="Here!" id="CreateAccountButton"/>
                 </form>
         </div>
     )
