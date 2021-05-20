@@ -1,20 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
+import React from 'react'
 
-function ProfilePage(){
-    return 
-    (
-    <div className='Card'>
-       <div className='uc'>
-            
-          <h2>hej><  
-            
-    <div/>
+
+import React from 'react'
+
+export default function ProfilePage() {
+  return (
+    <div>
+      
     </div>
-    )  
+  )
 }
-
-  export default ProfilePage
-
-
-

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import logo from './logo.svg'
 import Footer from './components/Footer'
 //Import Libraries
-import { BrowserRouter, Route, Switch, } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 import Navbar from './components/Navbar'
 
 //Import CSS
@@ -21,17 +21,25 @@ function App() {
 
   return (
 
+
+
     <div className="App">
 
+    
 
-    <BrowserRouter>
 
+
+
+
+    <Router>
+    
       
-     
       <Navbar/>
+      <SimpleButtons/>
       <Switch>
-      <Route exact path="/" component={SearchPage}  />
-      <Route exact path="/Login" component={LoginPage}  />
+      <Route exact path="/" component={SearchPage}/>
+      <Route exact path="/Login" component={LoginPage}/>
+      <Route exact path="/SearchPage" component={SearchPage}  />
       <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
@@ -40,11 +48,12 @@ function App() {
       
       
 
+  
       </Switch> 
 
       <Footer/>
-
-    </BrowserRouter>
+    
+    </Router>
     
     </div>
   )

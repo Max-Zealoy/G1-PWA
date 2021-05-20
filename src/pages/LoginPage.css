@@ -10,6 +10,7 @@
 
 #TitleLogin {
     color: rgb(255, 255, 255);
+    margin-top: 5%;
 }
 
 #LoginBody {
@@ -34,6 +35,7 @@
     border-radius: 10px;
     margin-bottom: 4%;
     width: 15%;
+    margin-bottom: 10%;
 }
 
 #UserName {
@@ -46,3 +48,24 @@
     border-radius: 10px;
     margin-top: 2%;
 }
+
+
+/*Mobile size */
+
+@media all and (max-width: 768px) {
+
+    #LoginBody {
+        margin-top: -10px;
+        width: 100%;
+
+}
+
+    #TitleLogin {
+    padding-top: 50px;
+}
+
+    #CreateAccountButton, #LoginButton {
+    width: 135px;
+    }
+}
+
