@@ -12,7 +12,7 @@ return (
                 <ul className="nav-links" 
                 style={{transform: open ? "translateX(0px)" : ""}}>
                     <li>
-                        <a>Home</a>
+                        
                     </li>
                     <li>
                         <a>Product</a>
