@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Navbar.css'
 
 
 function Navbar() {
@@ -26,7 +27,8 @@ return (
                         <a>Contact</a>
                     </li>
                 </ul>
-                <i onClick={() => setOpen(!open)} className="fas fa-bars burger"></i>
+             {/*   <i onClick={() => setOpen(!open)} className="fas fa-bars burger"></i> */}
+             <i onClick={() => setOpen(!open)} className="fas fa-bars burger"></i>
     
             </nav>
         </div>
@@ -34,3 +36,5 @@ return (
 }
 
 export default Navbar;
+
+

@@ -4,6 +4,7 @@
     text-align: center;
     margin: auto;
     border-radius: 10px;
+    height: auto;
 }
 
 
@@ -11,8 +12,8 @@
     color: rgb(255, 255, 255);
 }
 
-#LoginBody.h3 {
-    color: green;
+#LoginBody {
+    margin-top: 2%;
 }
 #UserName{
     color: blue;
@@ -25,16 +26,20 @@
 #LoginButton {
      border-radius: 10px;
      margin-top: 2%;
+     margin-bottom: 2%;
+     width: 15%;
 }
 
 #CreateAccountButton {
     border-radius: 10px;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
+    width: 15%;
 }
 
 #UserName {
     border-radius: 10px;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 #PassWord {

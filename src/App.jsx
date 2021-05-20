@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import Footer from './components/Footer'
 //Import Libraries
 import { BrowserRouter, Route, Switch, } from "react-router-dom";
+import Navbar from './components/Navbar'
 
 //Import CSS
 import './App.css'
@@ -14,31 +15,24 @@ import ChatPage from './pages/ChatPage';
 import ActivityPage from './pages/ActivityPage';
 import SearchPage from './pages/SearchPage';
 import LoginPage from './pages/LoginPage';
-
-
+import CreatePage from './pages/CreateAccountPage'
 
 function App() {
-
 
   return (
 
     <div className="App">
 
 
-
-
-
-
     <BrowserRouter>
+
       
-    
-
-      <header/>
-      <SimpleButtons/>
-
+     
+      <Navbar/>
       <Switch>
       <Route exact path="/" component={SearchPage}  />
       <Route exact path="/Login" component={LoginPage}  />
+      <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={ActivityPage}  />
   
@@ -48,9 +42,10 @@ function App() {
       <Footer/>
 
     </BrowserRouter>
-
+    
     </div>
   )
 }
 
 export default App
+
