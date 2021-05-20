@@ -16,6 +16,8 @@ import ActivityPage from './pages/ActivityPage';
 import SearchPage from './pages/SearchPage';
 import LoginPage from './pages/LoginPage';
 import CreatePage from './pages/CreateAccountPage';
+
+
 import Upload from './pages/UploadPage';
 function App() {
 
