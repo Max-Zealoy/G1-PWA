@@ -34,7 +34,8 @@ return (
                     </li>
                     
                     <li>
-                    <a><img src={AddBtn} alt='AddBtn' /></a>
+                    <Link to='../UploadPage'> <img className="AddBtn" src={AddBtn} alt='AddBtn' />
+                </Link>
                     </li>
                     
                     <li>
