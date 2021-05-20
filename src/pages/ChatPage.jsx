@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styling/Chat.css'
+import Navbar from '../components/Navbar'
+import SimpleButton from '../components/Buttons'
 
 
 
@@ -32,6 +34,9 @@ function  ChatPage() {
   
     return (
       <div>
+                
+        <Navbar/>
+        <SimpleButton/>
         <div className="ChatTitle">
             <h1>Cat Room</h1>
             <h3>Let's cat with your friends</h3>

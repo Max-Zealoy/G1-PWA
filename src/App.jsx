@@ -12,13 +12,16 @@ import './App.css'
 import SimpleButtons from './components/Buttons'
 //Import Pages
 import ChatPage from './pages/ChatPage';
-import ActivityPage from './pages/ActivityPage';
+
 import SearchPage from './pages/SearchPage';
 import LoginPage from './pages/LoginPage';
 import CreatePage from './pages/CreateAccountPage';
+import Activity from './pages/Activity';
 
 
 import Upload from './pages/UploadPage';
+import Home from './pages/Home';
+
 function App() {
 
   return (
@@ -27,25 +30,19 @@ function App() {
 
     <div className="App">
 
-    
-
-
-
-
+  
 
     <Router>
     
-      
-      <Navbar/>
-      <SimpleButtons/>
+  
+ 
       <Switch>
-      <Route exact path="/" component={SearchPage}/>
-      <Route exact path="/Login" component={LoginPage}/>
-      <Route exact path="/SearchPage" component={SearchPage}  />
-      <Route exact path="/CreatePage" component={CreatePage}  />
-      <Route exact path="/Chat" component={ChatPage}  />
-      <Route exact path="/Activity" component={ActivityPage}  />
-
+      <Route exact path="/" component={Home}/>
+      <Route path="/Login" component={LoginPage}/>
+      <Route path="/SearchPage" component={SearchPage}  />
+      <Route path="/CreatePage" component={CreatePage}  />
+      <Route path="/Chat" component={ChatPage}  />
+      <Route path="/Activity" component={Activity}  />
       <Route exact path="/UploadPage" component={Upload}  />
       
       

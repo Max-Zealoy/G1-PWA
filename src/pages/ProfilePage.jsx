@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-
-import React from 'react'
-
-
-import React from 'react'
+import Navbar from '../components/Navbar'
+import SimpleButton from '../components/Buttons'
 
 export default function ProfilePage() {
   return (
-    <div>
-      
-    </div>
+    <>
+    <Navbar/>
+    <SimpleButton/>
+    </>
   )
 }

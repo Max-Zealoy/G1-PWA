@@ -15,7 +15,7 @@ return (
         <div>
             <nav>
                 <div className="logoText">
-                <Link to='../'> <img className="catlogo" src={Catlogo} alt='Catlogo' /><h3>-CATSNAP-</h3>
+                <Link to='/'> <img className="catlogo" src={Catlogo} alt='Catlogo' /><h3>-CATSNAP-</h3>
                 </Link>
                 </div>
 
