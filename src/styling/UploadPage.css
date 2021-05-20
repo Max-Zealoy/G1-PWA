@@ -1,0 +1,16 @@
+.Uploadpicture{
+    
+    width: 218px;
+    height: 56px;
+    margin-left: 50px;
+    background: rgba(255, 223, 141, 0.8);
+    border-radius: 20px;
+
+    
+}
+
+
+
+#CatPicture{
+    height: 100px;
+}
