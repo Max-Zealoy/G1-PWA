@@ -1,16 +1,38 @@
 .Uploadpicture{
-    
-    width: 218px;
-    height: 56px;
-    margin-left: 50px;
-    background: rgba(255, 223, 141, 0.8);
+    size: 20%;
     border-radius: 20px;
-
+    text-align: center;
     
 }
 
+h2{
+    padding-bottom: 30px;
+}
+#TedPicture{
+    height: 20px;
+}
 
+#file-input{
+    width: 240;
+    align-items: center;
+    margin: 20px;
+}
 
-#CatPicture{
+#textDescription{
     height: 100px;
+    width: 400px;
+    margin: 10px;
+}
+
+button{
+    background-color: #F79329;
+  border: none;
+  color: white;
+  padding: 10px 175px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
