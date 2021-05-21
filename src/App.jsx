@@ -1,41 +1,121 @@
-import React, { useState } from 'react'
-import Footer from './components/Footer'
-//Import Libraries
-import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
-import Navbar from './components/Navbar'
-
-//Import CSS
-import './App.css'
-
-//Import Components
-import SimpleButtons from './components/Buttons'
-//Import Pages
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link, useHistory }
+  from "react-router-dom";
+import { withContext, useNamedContext, Style, If, Else }
+  from 'react-easier';
+import StartPage from './StartPage';
+import RegisterPage from './RegisterPage';
+import LoginPage from './LoginPage';
+import mongoosy from 'mongoosy/frontend';
 import ChatPage from './pages/ChatPage';
 import SearchPage from './pages/SearchPage';
-import LoginPage from './pages/LoginPage';
+import LoginPage2 from './pages/LoginPage';
 import CreatePage from './pages/CreateAccountPage';
 import Activity from './pages/Activity';
 import Profile from './pages/ProfilePage';
 import Upload from './pages/UploadPage';
 import Home from './pages/Home';
-
-function App() {
-
-  return (
+const { Login } = mongoosy;
 
 
+//Import CSS
+import './App.css'
+// This shouldn't be needed but ensures that 
+// we do not get any resets of these context vars
+let photos = [], messages = [];
 
-    <div className="App">
+export default withContext('global', {
+  // GLOBAL CONTEXT
+  user: false,
+  sseConnecton: false,
+  display: null,
+  photos,
+  messages
+}, function App() {
 
-  
+  // LOGIC
+  const g = useNamedContext('global');
+  const history = useHistory();
 
+  // start an SSE connection or close it if no user
+  const startSSE = user => {
+    // someone has been logged in but has now logged out
+    // close sse connection and empty messages and photos
+    if (!user && g.sseConnection) {
+      g.sseConnection.close();
+      photos = g.photos = [];
+      messages = g.messages = [];
+      return;
+    }
+    // we already have a sse connection (and are logged in)
+    if (g.sseConnection) { return; }
+    // logged in and not sse connection - so create one
+    let sse = new EventSource('/api/sse');
+    // add photos from sse
+    sse.addEventListener('photos',
+      e => photos = g.photos = [...photos, ...JSON.parse(e.data)]
+    );
+    // add messages from sse
+    sse.addEventListener('messages',
+      e => messages = g.messages = [...messages, ...JSON.parse(e.data)]
+    );
+    g.sseConnection = sse;
+  }
+
+  // check if a user is logged in and who it is
+  const loginCheck = async () => {
+    let user = await Login.check();
+    startSSE(user);
+    g.user = user.js.email ? user : false;
+    g.display = true;
+  }
+
+  // when the App mounts
+  useEffect(() => loginCheck(), []);
+
+  // logout
+  const logout = async e => {
+    e.preventDefault();
+    await Login.logout();
+    loginCheck();
+    // redirect to the start page
+    history.push('/');
+  }
+
+  // TEMPLATE
+  const render = () => g.display && <Style css={css()}>
     <Router>
-    
-  
- 
+
+      <nav>
+        <Link to="/">Home</Link>
+        <If c={g.user}>
+          <p>Logged in as {g.user.name} ({g.user.email})</p>
+          <p><a href="#" onClick={logout}>Log out</a></p>
+          <Else>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </Else>
+        </If>
+        <hr />
+      </nav>
+
       <Switch>
-      <Route exact path="/" component={SearchPage}/>
-      <Route exact path="/Login" component={LoginPage}/>
+        <Route exact path="/">
+          <If c={g.user}>
+            <StartPage />
+            <Else>
+              <h1>Welcome</h1>
+            </Else>
+          </If>
+        </Route>
+        <Route path="/register">
+          <RegisterPage {...{ loginCheck }} />
+        </Route>
+        <Route path="/login">
+          <LoginPage {...{ loginCheck }} />
+        </Route>
+        <Route exact path="/" component={SearchPage}/>
+      <Route exact path="/Login" component={LoginPage2}/>
       <Route exact path="/SearchPage" component={SearchPage}  />
       <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
@@ -43,19 +123,28 @@ function App() {
       <Route exact path="/Profile" component={Profile}  />
       <Route exact path="/Home" component={Home}  />
       <Route exact path="/UploadPage" component={Upload}  />
-      
-      
+      </Switch>
 
-  
-      </Switch> 
-
-      <Footer/>
-    
     </Router>
-    
-    </div>
-  )
-}
+  </Style>;
 
-export default App
+  // STYLE
+  const css = () => /*css*/`
+    input {
+      display: block;
+      width: 300px;
+      margin-bottom: 10px;
+      line-height: 140%;
+    }
 
+    nav a {
+      padding: 20px;  
+    }
+
+    nav a:first-child {
+      padding-left: 0
+    }
+  `;
+
+  return render();
+});

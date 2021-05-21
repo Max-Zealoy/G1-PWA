@@ -1,4 +1,7 @@
-
-*.map
-node_modules/.vite/react-router-dom.js
-*.map
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+*.jpeg
+*.png

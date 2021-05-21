@@ -7,6 +7,25 @@ body {
 font-family: 'Quicksand', sans-serif;
 }
 
+.KeepOrder{
+    max-width: fit-content;
+    margin: auto; 
+
+}
+.UploadedPhotos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    gap: 10px;
+    
+}
+
+.UploadedPhotos img{
+    width: 300px;
+}
 /* Buttons */ 
 
 .ChatNoticeGrid{
@@ -34,11 +53,25 @@ grid-row: 1;
     width: 68px;
     }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 968px) {
     .Megaphone, .Bubble {
         width: 50px;
     }
 
+    .UploadedPhotos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+        text-align: center;
+        gap: 5px;
+        
+    }
+    .UploadedPhotos img{
+        width: 135px;
+
+    }
 }
 
 /* Other page*/ 
