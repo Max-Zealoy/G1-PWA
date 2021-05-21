@@ -26,11 +26,14 @@ return (
                         
                     </li>
                     <li>
-                        <a><img src={Home} alt='Home' /></a>
+                    <Link to='../'>
+                        <img src={Home} alt='Home' />
+                        </Link>
                     </li>
                     
                     <li>
-                    <a><img src={Search} alt='Search' /></a>
+                    <Link to='../SearchPage'><img src={Search} alt='Search' />
+                    </Link>
                     </li>
                     
                     <li>
@@ -44,7 +47,7 @@ return (
                     
                     <li>
                    
-                    <Link to='../ProfilePage'> <img className="ProfileButton" src={ProfileButton} alt='ProfileButton' />
+                    <Link to='../Profile'> <img className="ProfileButton" src={ProfileButton} alt='ProfileButton' />
                 </Link>
                     </li>
                 </ul>

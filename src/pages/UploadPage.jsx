@@ -1,7 +1,8 @@
 import React from 'react'
 import '../styling/UploadPage.css'
 import CatPicture from '../images/Buttons/Ted.png'
-
+import Navbar from '../components/Navbar'
+import SimpleButton from '../components/Buttons'
 
 
 
@@ -10,6 +11,10 @@ import CatPicture from '../images/Buttons/Ted.png'
 
 function Upload() {
     return (
+<div>
+        <Navbar/>
+        <SimpleButton/>
+
         <div className="Uploadpicture">
             <h2>Uploading a picture? Pawsome!</h2>
                 <div className='TedPicture'>
@@ -35,6 +40,7 @@ function Upload() {
             <button class="button">Upload</button>
 </div>
 
+        </div>
         </div>
     )
 }

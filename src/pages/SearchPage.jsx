@@ -6,9 +6,13 @@ import SimpleButton from '../components/Buttons'
 
 export default function SearchPage() {
     return (
+<div>
+        <Navbar/>
+        <SimpleButton/>
         <div className="SearchPage">
                     
-    
+            
+
              <input
             type="text"
             placeholder="Search..."
@@ -16,6 +20,7 @@ export default function SearchPage() {
             
         />
         <img src={Search} className="SearchImage"></img> 
+        </div>
         </div>
     )
 }

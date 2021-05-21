@@ -19,7 +19,7 @@ function LoginPage() {
            Meowstername <br /> <input type="text" id="UserName" /> <br />
             Meowword <br /><input type="text" id="PassWord" /> <br />
 
-            <Link to='../SearchPage'> <input type="button" value="Login" id="LoginButton"  />
+            <Link to='../'> <input type="button" value="Login" id="LoginButton"  />
              <br />
              </Link>
               New user? Join our cat army 

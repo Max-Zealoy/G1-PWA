@@ -1,0 +1,197 @@
+.GridProfile{
+    
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+align-items: center;
+grid-auto-rows: minmax(70px, auto);
+margin: 0 auto;
+margin-top: 0px;
+font-family: 'Quicksand';
+text-align: center;
+column-gap: 5px;
+margin-left: 10px;
+margin-right: 10px;
+
+
+}
+
+.Title{
+    grid-column: 6;
+    grid-row: 1;
+    align-self: baseline;
+}
+
+.Notification{
+    grid-column: 10;
+    grid-row: 1;
+    width: max-content;
+    align-self: center;
+    margin-left: -25px;
+    margin-top: -40px;
+}
+
+.Off{
+    grid-column: 10;
+    grid-row: 2;
+    width: max-content;
+    align-self: baseline;
+    margin-left: 3px;
+}
+.On{
+    grid-column: 11;
+    grid-row: 2;
+    width: max-content;
+    align-self: baseline;
+    margin-left: -35px;
+}
+.NotificationBar{
+    grid-column: 10;
+    grid-row: 1;
+    align-self: flex-end;
+}
+
+.Lady{
+    grid-column: 6;
+    grid-row: 2;
+    margin: auto;
+}
+
+.Edit{
+    grid-column: 7;
+    grid-row: 2;
+    align-self: baseline;
+    margin-left: -70px;
+}
+
+.ProfileName{
+    grid-column: 6;
+    grid-row: 3;
+}
+
+.Email{
+    grid-column: 6;
+    grid-row: 4;
+    align-self: baseline;
+}
+
+.Following{
+    grid-column: 9;
+    grid-row: 2;
+}
+
+.Followers{
+    grid-column: 11;
+    grid-row: 2;
+}
+
+.Fifty{
+    grid-column: 9;
+    grid-row: 2;
+    margin-top: -60px;
+}
+
+.FiveH{
+    grid-column: 11;
+    grid-row: 2;
+    margin-top: -60px;
+}
+
+.UploadedPictures{
+    grid-column: 2;
+    grid-row: 2;
+    width: fit-content;
+}
+
+.FiveT{
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -60px;
+    width: fit-content;
+    
+}
+
+
+@media all and (max-width: 768px) {
+
+
+    .GridProfile {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .Lady {
+        grid-column: 1;
+        grid-row: 2;
+        margin: auto;
+    }
+
+    .Followers {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .FiveH {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: -60px;
+    }
+
+    .Following {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    .Fifty {
+        grid-column: 4;
+        grid-row: 2;
+        margin-top: -60px;
+    }
+
+    .UploadedPictures {
+        grid-column: 6;
+        grid-row: 2;
+    }
+
+    .FiveT {
+        grid-column: 6;
+        grid-row: 2;
+        margin-top: -60px;
+    }
+    
+    .Email {
+        grid-column: 1/3;
+        grid-row: 4;
+        align-self: baseline;
+    }
+    .ProfileName {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .Edit {
+        grid-column: 3;
+        grid-row: 2;
+        align-self: baseline;
+        margin-left: -130px;
+    }
+    .Notification {
+        grid-column: 6;
+        grid-row: 1;
+        width: max-content;
+        align-self: center;
+        margin-left: -50px;
+        margin-top: -40px;
+    }
+
+    .Title {
+        grid-column: 3;
+        grid-row: 1;
+        align-self: baseline;
+    }
+    .On {
+        grid-column: 7;
+        grid-row: 2;
+        width: max-content;
+        align-self: baseline;
+        margin-left: -35px;
+    }
+}

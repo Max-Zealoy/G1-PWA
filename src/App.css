@@ -3,7 +3,7 @@ body {
 }
 
 
-.App text,p,input{
+.App text,p,input,h1,h2,h3{
 font-family: 'Quicksand', sans-serif;
 }
 
