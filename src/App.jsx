@@ -5,11 +5,10 @@ import { withContext, useNamedContext, Style, If, Else }
   from 'react-easier';
 import StartPage from './StartPage';
 import RegisterPage from './RegisterPage';
-import LoginPage from './LoginPage';
 import mongoosy from 'mongoosy/frontend';
 import ChatPage from './pages/ChatPage';
 import SearchPage from './pages/SearchPage';
-import LoginPage2 from './pages/LoginPage';
+import Welcome from './pages/Welcome';
 import CreatePage from './pages/CreateAccountPage';
 import Activity from './pages/Activity';
 import Profile from './pages/ProfilePage';
@@ -85,37 +84,35 @@ export default withContext('global', {
   // TEMPLATE
   const render = () => g.display && <Style css={css()}>
     <Router>
-
-      <nav>
-        <Link to="/">Home</Link>
+        <div>
         <If c={g.user}>
-          <p>Logged in as {g.user.name} ({g.user.email})</p>
+          <p className="User">Logged in as {g.user.name} ({g.user.email})</p>
+          <div className="Logout">
           <p><a href="#" onClick={logout}>Log out</a></p>
-          <Else>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </Else>
-        </If>
-        <hr />
-      </nav>
+          </div>
+          </If>
+      </div>
+        
+
 
       <Switch>
         <Route exact path="/">
           <If c={g.user}>
             <StartPage />
             <Else>
-              <h1>Welcome</h1>
+            <Welcome {...{ loginCheck }} />
             </Else>
           </If>
         </Route>
         <Route path="/register">
           <RegisterPage {...{ loginCheck }} />
         </Route>
-        <Route path="/login">
-          <LoginPage {...{ loginCheck }} />
+        <Route path="/Welcome">
+          <Welcome {...{ loginCheck }} />
         </Route>
-        <Route exact path="/" component={SearchPage}/>
-      <Route exact path="/Login" component={LoginPage2}/>
+        
+      <Route exact path="/" component={SearchPage}/>
+      <Route exact path="/Welcome" component={Welcome}/>
       <Route exact path="/SearchPage" component={SearchPage}  />
       <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
@@ -130,20 +127,7 @@ export default withContext('global', {
 
   // STYLE
   const css = () => /*css*/`
-    input {
-      display: block;
-      width: 300px;
-      margin-bottom: 10px;
-      line-height: 140%;
-    }
-
-    nav a {
-      padding: 20px;  
-    }
-
-    nav a:first-child {
-      padding-left: 0
-    }
+  
   `;
 
   return render();

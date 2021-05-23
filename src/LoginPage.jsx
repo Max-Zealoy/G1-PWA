@@ -28,7 +28,8 @@ export default function LoginPage({ loginCheck }) {
   };
 
   // TEMPLATE
-  const render = () => <Style css={css()}>
+return(
+    <div>
     <h1>Log in</h1>
     <form onSubmit={login}>
       <input type="email" placeholder="Email"
@@ -38,11 +39,9 @@ export default function LoginPage({ loginCheck }) {
       {s.error && <p>{s.error}</p>}
       <input type="submit" value="Log in" />
     </form>
-  </Style>;
+    </div>
 
   // STYLE
-  const css = () => /*css*/`
-  `;
-
-  return render();
+)
 }
+

@@ -53,6 +53,19 @@ grid-row: 1;
     width: 68px;
     }
 
+    .User{
+        position: absolute;
+        left: 25%;
+        right: 25%;
+        text-align: center;
+    }
+
+  .Logout{
+    position: absolute;
+    right: 5%;
+    margin-top: 35px;
+  }  
+
 @media all and (max-width: 968px) {
     .Megaphone, .Bubble {
         width: 50px;

@@ -70,8 +70,8 @@ export default function StartPage() {
       <input type="text" placeholder="Message"
         {...s.bind('chatMessage')} />
       <input type="submit" value="Send" />
+    
     </form>  
-
     <h2>Upload photo</h2>
     <form name="photoUpload" onSubmit={uploadPhoto}>
       <input name="file" type="file"

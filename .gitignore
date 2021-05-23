@@ -6,4 +6,3 @@ dist-ssr
 *.jpeg
 *.png
 backend/settings/dbConnectionUrl.json
-backend/settings/dbConnectionUrl.json
