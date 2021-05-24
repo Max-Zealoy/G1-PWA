@@ -5,6 +5,7 @@ import Notification from '../images/NotificationBar.png'
 import Navbar from '../components/Navbar'
 import SimpleButton from '../components/Buttons'
 
+
 import '../styling/ProfilePage.css'
 import cat1 from '../images/cats/cat1.jpg'
 import cat2 from '../images/cats/cat2.jpg'

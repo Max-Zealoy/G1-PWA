@@ -74,12 +74,17 @@ export default withContext('global', {
 
   // logout
   const logout = async e => {
-    e.preventDefault();
+
     await Login.logout();
     loginCheck();
+    e.preventDefault();
+
     // redirect to the start page
-    history.push('/');
+    history.push('./welcome');
   }
+
+ 
+
 
   // TEMPLATE
   const render = () => g.display && <Style css={css()}>
@@ -88,7 +93,9 @@ export default withContext('global', {
         <If c={g.user}>
           <p className="User">Logged in as {g.user.name} ({g.user.email})</p>
           <div className="Logout">
-          <p><a href="#" onClick={logout}>Log out</a></p>
+          <Link to="./welcome"><p onClick={logout}>Log out</p></Link>
+
+
           </div>
           </If>
       </div>
@@ -98,7 +105,7 @@ export default withContext('global', {
       <Switch>
         <Route exact path="/">
           <If c={g.user}>
-            <StartPage />
+            <SearchPage />
             <Else>
             <Welcome {...{ loginCheck }} />
             </Else>
@@ -114,6 +121,7 @@ export default withContext('global', {
       <Route exact path="/" component={SearchPage}/>
       <Route exact path="/Welcome" component={Welcome}/>
       <Route exact path="/SearchPage" component={SearchPage}  />
+      <Route exact path="/StartPage" component={StartPage}  />
       <Route exact path="/CreatePage" component={CreatePage}  />
       <Route exact path="/Chat" component={ChatPage}  />
       <Route exact path="/Activity" component={Activity}  />
