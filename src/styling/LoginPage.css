@@ -1,10 +1,13 @@
 #LoginBody {
     background-color:#FFDF8D;
-    width: 50%;
+    width: 100%;
     text-align: center;
-    margin: auto;
-    border-radius: 10px;
-    height: auto;
+    margin-top: -105px;
+    height: 100%;
+    top: 0px;
+    padding-top: 3%;
+ 
+
 }
 
 
@@ -13,11 +16,12 @@
     margin-top: 5%;
 }
 
-#LoginBody {
-    margin-top: 2%;
+#Kattfan {
+    width: 25%;
 }
+
 #UserName{
-    color: blue;
+    color: black;
 }
 
 #LoginForm {
@@ -26,6 +30,7 @@
 
 
 #LoginForm input{
+   
     height: 30px;
     width: 200px;
     font-size: 16px;
@@ -38,7 +43,7 @@
 
 #LoginButton {
      border-radius: 10px;
-     margin-top: 2%;
+     margin-top: 1%;
      margin-bottom: 2%;
      width: 15%;
      cursor: pointer;
@@ -47,8 +52,10 @@
 #CreateAccountButton {
     border-radius: 10px;
     margin-bottom: 4%;
+    margin-top: 0.5%;
     width: 15%;
-    margin-bottom: 10%;
+
+
 }
 
 #UserName {
@@ -68,9 +75,9 @@
 @media all and (max-width: 768px) {
 
     #LoginBody {
-        margin-top: -50px;
+        margin-top: 0px;
         width: 100%;
-        padding-bottom: -44px;
+        padding-bottom: -5%;
         position: absolute;
         top: 0px;
         bottom: 0;
@@ -87,4 +94,3 @@
     width: 135px;
     }
 }
-

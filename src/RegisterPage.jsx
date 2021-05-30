@@ -2,6 +2,9 @@ import React from 'react';
 import { useHistory } from "react-router-dom";
 import { Style, useStates } from 'react-easier';
 import mongoosy from 'mongoosy/frontend';
+import './styling/RegisterPage.css'
+import cat from './images/Buttons/catlogo.png'
+
 const { User, Login } = mongoosy;
 
 export default function RegisterPage({ loginCheck }) {
@@ -40,19 +43,21 @@ export default function RegisterPage({ loginCheck }) {
 
   // TEMPLATE
   const render = () => <Style css={css()}>
-    <h1>Register</h1>
-    <form onSubmit={register} autoComplete="off">
+    <div id="RegisterBody">
+    <h1 id="RegisterTitle">Join our awesome cat family!</h1>
+    <form onSubmit={register} autoComplete="off" id="RegisterForm">
       <input type="text" placeholder="Your name"
-        required {...s.bind('name')} />
+        required {...s.bind('name')} /> <br />
       <input type="email" placeholder="Email"
-        required {...s.bind('email')} />
+        required {...s.bind('email')} /><br />
       <input type="password" placeholder="Password"
-        required minLength="6"{...s.bind('password')} />
+        required minLength="6"{...s.bind('password')} /><br />
       <input type="password" placeholder="Repeat password"
-        required minLength="6" {...s.bind('passwordRepeat')} />
+        required minLength="6" {...s.bind('passwordRepeat')} /><br />
       {s.error && <p>{s.error}</p>}
       <input type="submit" value="Register" />
     </form>
+    </div>
   </Style>;
 
   // STYLE

@@ -1,0 +1,15 @@
+#RegisterBody {
+    background-color: #FFDF8D;
+        height: 56.7em;
+        align-items: center;
+}
+
+#RegisterTitle{
+    text-align: center;
+    padding-top: 4%;
+    
+}
+
+#RegisterForm {
+    padding-top: 5%;
+}

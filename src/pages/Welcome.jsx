@@ -8,7 +8,7 @@ const { Login } = mongoosy;
 import cat from '../images/Buttons/catlogo.png'
 
 /* import pages */
-import './LoginPage.css'
+import '../styling/LoginPage.css'
 
 
 export default function LoginPage({ loginCheck }) {
@@ -38,7 +38,7 @@ export default function LoginPage({ loginCheck }) {
       return(
       <div id="LoginBody">
             <h2 id="TitleLogin">hello Catster!</h2>
-            <img src={cat} alt="" width= "40%" />
+            <img src={cat} alt=""  id="Kattfan" />
             <form onSubmit={login} id="LoginForm">
            Meowstername <br /> 
            <input type="email" id="UserName" placeholder="Email" required {...s.bind('email')} /> <br />
@@ -51,10 +51,14 @@ export default function LoginPage({ loginCheck }) {
           
              New user? Join our cat army 
              <br></br>
-             <Link to="/register">Register</Link>
+             <Link to="/register"><input type="button" value="Here!" id="CreateAccountButton" /></Link>
 
              </form>
              </div>
       )       
 }
+
+
+
+
 
