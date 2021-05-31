@@ -46,16 +46,16 @@ export default function RegisterPage({ loginCheck }) {
     <div id="RegisterBody">
     <h1 id="RegisterTitle">Join our awesome cat family!</h1>
     <form onSubmit={register} autoComplete="off" id="RegisterForm">
-      <input type="text" placeholder="Your name"
+      <input type="text" id="RegisterName" placeholder="Your name"
         required {...s.bind('name')} /> <br />
-      <input type="email" placeholder="Email"
+      <input type="email" id="RegisterEmail" placeholder="Email"
         required {...s.bind('email')} /><br />
-      <input type="password" placeholder="Password"
-        required minLength="6"{...s.bind('password')} /><br />
-      <input type="password" placeholder="Repeat password"
+      <input type="password"  placeholder="Password"
+        required minLength="6" id="RegisterPassword" {...s.bind('password')} /><br />
+      <input type="password" id="RegisterPassword2" placeholder="Repeat password"
         required minLength="6" {...s.bind('passwordRepeat')} /><br />
       {s.error && <p>{s.error}</p>}
-      <input type="submit" value="Register" />
+      <input type="submit" value="Register" id="RegisterButton" />
     </form>
     </div>
   </Style>;

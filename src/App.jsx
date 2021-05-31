@@ -9,7 +9,7 @@ import mongoosy from 'mongoosy/frontend';
 import ChatPage from './pages/ChatPage';
 import SearchPage from './pages/SearchPage';
 import Welcome from './pages/Welcome';
-import CreatePage from './pages/CreateAccountPage';
+import CreatePage from './RegisterPage';
 import Activity from './pages/Activity';
 import Profile from './pages/ProfilePage';
 import Upload from './pages/UploadPage';
