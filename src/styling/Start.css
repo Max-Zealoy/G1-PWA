@@ -1,0 +1,21 @@
+
+
+#PhotoFeed{
+    margin: 40%;
+}
+
+
+
+
+.Photos{
+    
+    margin-right: 28px;
+    width: 100%;
+}
+
+
+
+#likeBtn{
+    padding: 2px 20px;
+    border-radius: 5px;
+}
