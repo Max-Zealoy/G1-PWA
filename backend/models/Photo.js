@@ -1,4 +1,5 @@
 const [fs, path] = [require('fs'), require('path')];
+
 const { Schema, model } = require('mongoose');
 const modelName = 'Photo';
 
@@ -6,13 +7,18 @@ let schema = new Schema({
   url: { type: String, required: true },
   author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   tags: [String],
-  description: String,
-  posted: { type: Date, default: Date.now }
+  description: { type: String},
+  posted: { type: Date, default: Date.now },
+  location: { type: String},
+
+//a for the chat   
+  
+
+
 });
- 
-// the whole image data is sent from frontend as the property url
-// convert to only a file name and save photo in public/uploads
-// (the mongoose save hook let us do changes before saving...)
+
+
+
 schema.pre('save', function (next) {
   let [type, base64] = this.url.split(',');
   let extension = type.split('/')[1].split(';')[0];
@@ -23,6 +29,9 @@ schema.pre('save', function (next) {
   );
   this.url = fileName;
   fs.writeFile(filePath, buffer, next);
+
+
 });
 
 module.exports = model(modelName, schema);
+

@@ -1,5 +1,6 @@
-let Photo = require('./models/Photo');
 let Message = require('./models/Message');
+let Subscription = require('./models/Subscription');
+const sendNotification = require('./notifications');
 
 module.exports = app => {
 
@@ -25,16 +26,15 @@ module.exports = app => {
       'Content-Type': 'text/event-stream',
       'Cache-Control': 'no-cache'
     });
-    // send initial 'backlog' of photos and messages
-    sendPhotos(connection);
-    sendMessages(connection);
   });
 
   // Send a message via SSE
   function sendSSE(res, eventType, data) {
-    // remove passwords fields
-    data = JSON.parse(JSON.stringify(data,
-      (key, val) => key === 'password' ? undefined : val));
+    // TODO: send message to target ids
+    // if(eventType === 'chatMessageUpdate') {
+    //   sendNotification(null, data)
+    // }
+
     // send
     res.write(
       `event: ${eventType}\n` +
@@ -42,39 +42,27 @@ module.exports = app => {
     );
   }
 
-  // Calculate which photos to send to a connection/user
-  // (all the ones he/she doesn't have for now)
-  async function sendPhotos(connection) {
-    let photos = await Photo.find({
-      posted: { $gte: new Date(connection.hasPhotosUntil) }
-    }).populate('author');
-    connection.hasPhotosUntil = Date.now();
-    sendSSE(connection.res, 'photos', photos);
-  }
+  // Send an event when a something happens in the message db
+  Message.watch().on('change', e => {
+    console.log("OK", e);
+    console.log("connections", connections.length);
+    connections.forEach(({ res }) =>
+      sendSSE(res, 'chatMessageUpdate', e))
+  });
 
-  // Calculate which messages to send to a connection/user
-  // (all the one he/she doesn't have with the user as
-  //  a recipient or as the author)
-  async function sendMessages(connection) {
-    let userId = connection.req.session.user._id;
-    let messages = await Message.find({
-      sent: { $gte: new Date(connection.hasMessagesUntil) },
-      $or: [
-        { author: userId },
-        { recipients: { $elemMatch: { $eq: userId } } }
-      ]
-    }).populate('author recipients');
-    connection.hasMessagesUntil = Date.now();
-    sendSSE(connection.res, 'messages', messages);
-  }
+  // Heartbeat (send 'empty' events with 20 second delays)
+  // helps keep the connection alive
+  setInterval(
+    () => connections.forEach(({ res }) =>
+      sendSSE(res, 'heartbeat', new Date())),
+    20000
 
-  // Change listeners - listen to DB changes
-  Photo.watch().on('change', () => connections.forEach(sendPhotos));
-  Message.watch().on('change', () => connections.forEach(sendMessages))
-
-  // Heartbeat (send empty messages with 20 second delays)
-  // helps keep the connection alive - some proxies close it otherwise
-  setInterval(() => connections.forEach(({ res }) =>
-    sendSSE(res, 'heartbeat', new Date())), 20000);
-
+  );
+  
+  app.post('/api/messages', (req, res) => {
+    let message = new Message(req.body);
+    message.save();
+    res.send('sent message')
+  });
+ 
 };

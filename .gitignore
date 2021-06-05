@@ -6,3 +6,4 @@ dist-ssr
 *.jpeg
 *.png
 backend/settings/dbConnectionUrl.json
+backend/settings/dontCommit.json

@@ -2,64 +2,112 @@ import React, { useState, useEffect } from 'react'
 import { Style, useStates, useNamedContext } from 'react-easier';
 import '../styling/Chat.css'
 import Navbar from '../components/Navbar'
-import SimpleButton from '../components/Buttons'
 import mongoosy from 'mongoosy/frontend';
-const { User } = mongoosy;
-
+import SimpleButton from '../components/Buttons'
+const { myRoom, room } = mongoosy;
 
 
 function  ChatPage() {
   
   const g = useNamedContext('global');
 
+  useEffect(() => {
+    // Scroll to bottom of page after each update
+    window.scrollTo(0, 1000000);
+  });
 
   const s = useStates({
-    users: [],
-    chatMessage: '',
-    toWhom: '',
-    display: null
+    message: '',
+    newRoom: ''
   });
-  
 
-  const getUsers = async () => {
-    s.users = await User.find();
-    s.display = true;
+  async function send(e) {
+    e.preventDefault();
+    let newMessage = new Message({
+      author: g.user._id,
+      text: s.message,
+      room: g.myRoom
+    });
+    await newMessage.save();
+    s.message = '';
   }
 
-  // when the StartPage mounts
-  useEffect(() => getUsers(), []);
+  function addRoom(e) {
+    e.preventDefault();
+    g.rooms.push(s.newRoom);
+    g.myRoom = s.newRoom;
+    s.newRoom = '';
+  }
+
+  function switchRoom(e) {
+    g.myRoom = e.target.innerHTML;
+  }
+
+  function formatDate(sent) {
+    // format date to local time
+    let d = new Date(sent);
+    return d.toLocaleString();
+  }
 
     return (
       <div>
                 
         <Navbar/>
         <SimpleButton/>
-        <div className="ChatTitle">
-           
-           
-            <h1>Cat Room</h1>
-            <h3>Let's cat with your friends</h3>
-        </div>
+        <div className="chat">
 
-        <h2>Chat</h2>
-    <form name="writeInChat">
-      <label>To whom:&nbsp;
-      <select {...s.bind('toWhom')}>
-          {s.users
-            .filter(x => x._id !== g.user._id)
-            .map((x, i) => <option key={x._id}>{x.name}</option>)}
-        </select>
-      </label>
-      <input type="text" placeholder="new message"
-        {...s.bind('chatMessage')} />
-      <button type="submit"value="Send">send</button>
-    </form>
+        <div className="chat">
 
-      <div id="message-list"></div>
+<div className="rooms">
+  <div className="roomList">
+    <h4>Rooms</h4>
+    {(g.rooms || []).map(room =>
+      <div
+        onClick={switchRoom}
+        className={'room' + (room === g.myRoom ? ' active' : '')}
+        key={room}>
+        {room}
+      </div>
+    )}
+  </div>
+  <form className="addRoomForm" autoComplete="off" onSubmit={addRoom}>
+    <div className="input-group">
+      <input type="text" className="form-control shadow-none" placeholder="New room" {...s.bind('newRoom')} />
+      <div className="input-group-append">
+        <button className="btn btn-primary" type="button submit">Create</button>
+      </div>
+    </div>
+  </form>
+</div>
 
+<div className="messages">
+  {g.messages.filter(message => message.room === g.myRoom).map(message =>
+    <div
+      className={'message' + (message.author._id === g.user._id ? ' my' : '')}
+    >
+      <p>
+        {message.author.name}<br />
+        <span>{formatDate(message.sent)}</span>
+      </p>
+      <p>{message.text}</p>
+    </div>
+  )}
+</div>
 
-        </div>
+<div className="writeMessage">
+  <form className="messageForm" autoComplete="off" onSubmit={send}>
+    <div className="input-group m-3">
+      <input type="text" className="form-control shadow-none" placeholder="Write message" {...s.bind('message')} />
+      <div className="input-group-append">
+        <button className="btn btn-primary" type="button submit">Send</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</div>
     )
   }
-  
+
   export default ChatPage

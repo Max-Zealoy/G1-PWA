@@ -1,0 +1,268 @@
+.rooms{
+  position: inherit;
+  left: 15px;
+  border: 20px;
+  width: 25vw;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.roomList{
+
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 210px;
+  overflow: scroll;
+  top: 200px;
+    box-shadow:  inset 0 0 2000px rgb(163 227 178);
+
+}
+
+.Chatbtn{
+    
+    background-color: #F79329;
+    border-color: #F79329; 
+    margin: auto; 
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.SubmitBtn{
+    
+  background-color: #ffdf8d;
+  border-color: #F79329; 
+  margin: auto; 
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.writeMessage{
+    
+    position: fixed;
+    margin-left: 30%;
+    margin-right: 30%;
+    max-width: 60%;
+    min-width: 40%;
+    bottom: 0;
+    
+    
+}
+
+
+.messageForm{
+width: calc(100% - 80px);
+
+
+}
+
+.addRoomForm {
+  position: absolute;
+  left: 10px;
+  width: calc(100% - 20px);
+  margin-top: 130px;
+  top: 285px;
+  }
+
+  
+
+  .rooms h4 {
+    padding-left: 10px;
+    position: relative;
+  }
+
+  .room {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .room.active {
+    font-weight: bold;
+  }
+
+
+
+  .message {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #ddd;
+    padding: 8px;
+    margin-bottom: 20px;
+    width: 50%;
+    clear: both;
+    background-image: url('../images/pinkball.png');
+    background-repeat: no-repeat;
+    background-size: 38px auto;
+  }
+
+  .catJump{
+      z-index: -1;
+      
+  }
+  .my.message {
+    float: right;
+    background-color: #007bff;
+    color: #fff;
+    background-image: url('../images/greenball.png');
+    background-repeat: no-repeat;
+    background-size: 38px auto;
+   
+  }
+
+  
+
+  .my.message p:first-child {
+    text-align: right;
+  }
+
+  .message:last-child {
+    margin-bottom: 0;
+  }
+
+  .message p {
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  .message p:first-child {
+    font-weight: bold;
+    font-size: 80%;
+      margin-bottom: 10px
+  }
+
+.chatbox{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin: 1rem!important;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0;
+
+}
+
+.messages{
+margin-top: 277px;
+margin-left: 3px;
+margin-right: 3px;
+margin-bottom: 300px;
+
+}
+
+@media all and (max-width: 768px) {
+
+
+  .catJump{
+    width: 100px;
+    
+}
+
+
+.chatbox {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0;
+
+}
+
+.writeMessage {
+  position: fixed;
+  margin-left: -1px;
+  margin-right: 2px;
+  bottom: 49px;
+  
+}
+
+.chatcontrol{
+  height: calc(2.5em + .75rem + 2px);
+}
+
+.writeMessage input{
+  width: 200px;
+  min-width: 282px;
+}
+
+
+.messageForm{
+  margin-left: -8px;
+  
+  
+  } 
+
+  .Chatbtn{
+  height: 54px;
+  margin-left: 0px;
+  width: 66px;
+}
+
+.message{
+  z-index: -1;
+}
+
+.messages {
+  margin-top: 240px;
+
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-bottom: 300px;
+  z-index: 1;
+  
+}
+
+.roomList {
+  position: absolute;
+  width: calc(100% - 20px);
+  height: 153px;
+  overflow: scroll;
+  top: 115px;
+}
+
+.rooms{
+  position: inherit;
+}
+
+.addRoomForm {
+  position: absolute;
+  left: 10px;
+  width: calc(100% - 20px);
+  margin-top: 130px;
+  top: 140px;
+
+}
+
+
+}

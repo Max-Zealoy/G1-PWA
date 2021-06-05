@@ -1,7 +1,17 @@
 body {
     background-color: white;
+    font-family: 'Quicksand';
+
 }
 
+
+li,a,button{
+    cursor: url("./images/catcursor.png"), auto;
+
+}
+
+ 
+  
 
 .App text,p,input,h1,h2,h3{
 font-family: 'Quicksand', sans-serif;
@@ -30,7 +40,7 @@ font-family: 'Quicksand', sans-serif;
 
 .ChatNoticeGrid{
 display: grid;
-grid-template-columns: repeat(12, 1fr);
+grid-template-columns: repeat(11, 1fr);
 align-items: center;
 grid-auto-rows: minmax(100px, auto);
 margin: 0 auto;
@@ -41,7 +51,7 @@ margin-top: 0px;
 .Bubble{
 margin: auto;
 width: 70px;
-grid-column: 11;
+grid-column: 10;
 grid-row: 1;
 }
 
@@ -52,6 +62,16 @@ grid-row: 1;
     margin: auto;
     width: 68px;
     }
+
+
+    .ChatemailButton{
+        grid-column: 6;
+        grid-row: 1;
+        margin: auto;
+        width: fit-content;
+        display: grid;
+    }
+
 
     .User{
         position: absolute;
@@ -86,5 +106,6 @@ grid-row: 1;
 
     }
 }
+
 
 /* Other page*/ 

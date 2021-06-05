@@ -2,19 +2,16 @@ import React from 'react'
 import '../styling/footer.css';
 
 
+
+
 function Footer(){
-    return(
-        <div className="FooterSize">
-            <h1>-CATSNAP-</h1>
-            <h4>
-            About us Blog Job Help Confidentiality Condition Popular cats
-</h4>
-<h4>
-© 2021 Catsnap
-</h4>
-        </div>
-    )
+  return (
+    <div className="FooterSize">
+        <h3>©atsnap</h3>
+        <h6>For cats, by cats</h6>
+    </div>
+  );
+  
 }
 
-
-export default Footer
+export default Footer;
