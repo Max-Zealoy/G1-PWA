@@ -1,0 +1,61 @@
+#RegisterBody {
+    background-color: #FFDF8D;
+    margin-top: 5%;
+    align-items: center;   
+    width: 30%;
+    margin-left: 35%;
+}
+
+#RegisterForm{
+    margin-top: 10%;
+}
+
+#RegisterTitle{
+    text-align: center;
+
+    
+}
+
+#FormName {
+    
+    
+}
+
+#FormEmail {
+    padding-top: 5%;
+   
+}
+
+#FormPassword {
+    padding-top: 5%;
+}
+
+#FormConfirmPassword {
+    padding-top: 5%;
+}
+
+
+
+@media all and (max-width: 768px),(max-height: 360px) {
+
+    #RegisterBody {
+        margin-top: 0px;
+        width: 50%;
+        margin-left: 10%;
+        margin-bottom: -200px;
+    
+
+    }
+
+    #RegisterTitle {
+      padding-bottom: 10%;
+      margin-left: 42%;
+      padding-top: 5%;
+      
+    }
+
+    #RegisterCat {
+        margin-left: 50%;
+        width: 50%;
+    }
+}

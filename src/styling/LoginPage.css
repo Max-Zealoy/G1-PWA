@@ -3,11 +3,9 @@
     width: 100%;
     text-align: center;
     margin-top: -105px;
-    height: 100%;
+    height: 70rem;
     top: 0px;
     padding-top: 3%;
- 
-
 }
 
 
@@ -17,7 +15,8 @@
 }
 
 #Kattfan {
-    width: 25%;
+    width: 20%;
+    margin-bottom: 1%;
 }
 
 #UserName{
@@ -49,24 +48,26 @@
      cursor: pointer;
 }
 
-#CreateAccountButton {
+#RegisterButton {
     border-radius: 10px;
-    margin-bottom: 4%;
-    margin-top: 0.5%;
-    width: 15%;
-
-
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: 12%;
+    cursor: pointer;
+    border: 1px solid #919191;
+    height: 30px;
 }
+
 
 #UserName {
     border-radius: 10px;
-    margin-top: 2%;
+    margin-top: 1%;
     margin-bottom: 1%;
 }
 
 #PassWord {
     border-radius: 10px;
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 
@@ -76,11 +77,12 @@
 
     #LoginBody {
         margin-top: 0px;
-        width: 100%;
+        width: 50%;
         padding-bottom: -5%;
         position: absolute;
         top: 0px;
         bottom: 0;
+        height: 100%;
         width: 100%;
         border-radius: 0px;
 
@@ -90,7 +92,12 @@
     padding-top: 50px;
 }
 
-    #CreateAccountButton, #LoginButton {
-    width: 135px;
+    #RegisterButton, #LoginButton {
+        width: 28%;
+    }
+
+    #Kattfan {
+        width: 40%;
+        margin-bottom: 1%;
     }
 }
