@@ -1,0 +1,5 @@
+{
+  "atlasUrl": "example+srv://exampleUser:Password@cluster0.1234e.mongodb.net/Cluster0?retryWrites=true&w=majority",
+  "publicPushKey": "<your-public-key>",
+  "privatePushKey": "<your-private-key>"
+}
