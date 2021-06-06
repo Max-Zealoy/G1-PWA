@@ -4,3 +4,4 @@ dist
 dist-ssr
 backend/settings/dbConnectionUrl.json
 backend/settings/dontCommit.json
+backend/settings/dontCommit.json
