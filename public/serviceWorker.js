@@ -5,7 +5,8 @@ importScripts('/src/utilities/idb-min.js');
 importScripts('/src/utilities/IDB.js');
 
 let cache; // holder for open cache
-let missingImageUrl = 'images/missing-image.png';
+//if missing image change to this
+let missingImageUrl = 'images/error.png';
 
 // EVENTS:
 
@@ -105,7 +106,8 @@ async function onPush(evt) {
   // options on how to display the notification
   const options = {
     body: data.content,
-    vibrate: [100, 100],
+    icon: 'images/catclose.png',
+    vibrate: [100,50, 100],
     // image: data.image, // to show image in notify
     data: {
       url: data.url

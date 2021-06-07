@@ -26,7 +26,7 @@ async function configPushSubscription() {
 
   if(subs) return; // already subscribed
 
-  let publicPushKey = '<your-public-key>';
+  let publicPushKey = 'BN_4KisCNNqmEx1L6WqDesKhkhFaJ90IFEuIgLoXDmlmwPDXtIjmQBNr_pDqzM2RDTfawSgzKRvUWmgKCKhU2XY';
   publicPushKey = urlBase64ToUint8Array(publicPushKey);
 
   let newSub = await sw.pushManager.subscribe({

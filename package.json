@@ -6,7 +6,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "backend": "node \"backend/index\"",
-    "start": "concurrently \"npm:dev\" \"npm:backend\""
+    "start": "concurrently \"npm:dev\" \"npm:backend\"",
+    "web-push": "web-push"
   },
   "dependencies": {
     "concurrently": "^6.1.0",
