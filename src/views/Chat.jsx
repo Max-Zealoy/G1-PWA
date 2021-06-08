@@ -1,11 +1,14 @@
 import Catjump from '../images/cattenor.gif'
 import "../styling/ChatCSS.css";
+import { v4 as uuidv4 } from 'uuid';
+
 
 export default function Chat() {
 
   // Note:
   // The script utilities/updateHandler.js 
   // fetches all messages and rooms
+
 
   const g = useNamedContext('global');
 
@@ -14,9 +17,10 @@ export default function Chat() {
  
     if (g.newRoom ) {
       console.log(g.newRoom);
+      
     }
 
-  }, [] ); 
+  }, []); 
 
   useEffect(() => {
     // Scroll to bottom of page after each update
@@ -34,7 +38,9 @@ export default function Chat() {
     let message= {
       author: g.user._id,
       text: s.message,
-       room: g.myRoom
+       room: g.myRoom,
+       
+      
      };
      // sync messages with the service worker
   if('serviceWorker' in navigator && 'SyncManager' in window) {
@@ -52,7 +58,7 @@ export default function Chat() {
     fetch('/api/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(message)
+      body: JSON.stringify(message),
     });
   
   }
@@ -74,6 +80,7 @@ export default function Chat() {
     g.rooms.push(s.newRoom);
     g.myRoom = s.newRoom;
     s.newRoom = '';
+
   }
 
   function switchRoom(e) {
@@ -98,7 +105,7 @@ export default function Chat() {
             <div
               onClick={switchRoom}
               className={'room' + (room === g.myRoom ? ' active' : '')}
-              key={room}>
+              key={room}>     
               {room}
             </div>
           )}
@@ -113,22 +120,25 @@ export default function Chat() {
         </form>
       </div>
 
-      <div className="messages">
-        {g.messages.filter(message => message.room === g.myRoom).map(message =>
-          <div
+      <div className="messages" >
+        {g.messages.filter(message=> message.room === g.myRoom).map(message =>
+          <div 
             className={'message' + (message.author._id === g.user._id ? ' my' : '')}
-          >
+            
+            
+             >
             <p>
               {message.author.name}<br />
               <span>{formatDate(message.sent)}</span>
             </p>
-            <p>{message.text}</p>
+            <p>{message.text}
+            </p>
           </div>
         )}
       </div>
 
       <div className="writeMessage">
-        <img class="catJump" src={Catjump}></img>
+        <img className="catJump" src={Catjump}></img>
         <form className="messageForm" autoComplete="off" onSubmit={send}>
           <div className="chatbox">
             <input type="text" className="chatcontrol" placeholder="Write message" {...s.bind('message')} />

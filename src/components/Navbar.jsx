@@ -47,7 +47,7 @@ return (
                     
                     <li>
                     <Link to='../photos'>
-                    <a><img src={Notification} alt='Notification' /></a>
+                    <img src={Notification} alt='Notification' />
                     </Link>
                     </li>
                     
@@ -58,15 +58,7 @@ return (
                     </li>
                 </ul>
      
-    {/*        {g.user && <span>
-      <span className="text-white">
-        Logged in as: {g.user.name} ({g.user.email})
-      </span>
-      <a className="text-white display d-inlineblock ml-4" href="#" onClick={logout}>
-        Log out
-      </a>
-    </span>}
-     */}
+ 
             
         
     </nav>

@@ -1,5 +1,4 @@
 export default withContext('global', { ready: false }, App);
-import "./App.css";
 
 function App() {
 
