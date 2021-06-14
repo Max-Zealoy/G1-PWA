@@ -17,10 +17,10 @@ export default function Chat() {
  
     if (g.newRoom ) {
       console.log(g.newRoom);
-      
+
     }
 
-  }, []); 
+  }, [] ); 
 
   useEffect(() => {
     // Scroll to bottom of page after each update
@@ -121,24 +121,32 @@ export default function Chat() {
       </div>
 
       <div className="messages" >
-        {g.messages.filter(message=> message.room === g.myRoom).map(message =>
+        {g.messages.filter(message=> message.room === g.myRoom).map((message =>
+            
+
+
+
           <div 
             className={'message' + (message.author._id === g.user._id ? ' my' : '')}
             
             
              >
+               <div className="AuthorAbove">
             <p>
               {message.author.name}<br />
               <span>{formatDate(message.sent)}</span>
             </p>
-            <p>{message.text}
+            </div>
+            <p className="ChatTextCenter">{message.text}
             </p>
           </div>
-        )}
+          
+        ))}
       </div>
 
+<div className="spaceBetween"></div>
       <div className="writeMessage">
-        <img className="catJump" src={Catjump}></img>
+      {/* <img className="catJump" src={Catjump}></img>*/}
         <form className="messageForm" autoComplete="off" onSubmit={send}>
           <div className="chatbox">
             <input type="text" className="chatcontrol" placeholder="Write message" {...s.bind('message')} />
