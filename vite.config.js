@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 3500,
     proxy: {
-      '/api': 'http://localhost:4102' // same port as server
+      '/api': 'http://localhost:4100' // same port as server
     }
   }
 })
