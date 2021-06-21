@@ -14,25 +14,31 @@ export default function Chat() {
 
 
   useEffect(() => {
- 
+   
+    //Scroll in the chatroom list
+
+     window.scrollTo(0, 1000000)
+   
     if (g.newRoom ) {
+
       console.log(g.newRoom);
-      
+
     }
 
-  }, []); 
+  }, [] ); 
 
-  useEffect(() => {
-    // Scroll to bottom of page after each update
-    window.scrollTo(0, 1000000);
-  });
 
   const s = useStates({
+    
     message: '',
     newRoom: ''
   });
 
   async function send(e) {
+
+    //Added scroll to bottom on submit
+    window.scrollTo(0, 1000000)
+
     e.preventDefault();
 
     let message= {
@@ -93,10 +99,22 @@ export default function Chat() {
     return d.toLocaleString();
   }
 
+
+  const messageBottom = useRef(null);
+ // Scroll to bottom when clicked on other room or on first load. 
+  useEffect(() => {
+    if (messageBottom) {
+      messageBottom.current.addEventListener('DOMNodeInserted', event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: 'smooth' });
+      });
+    }
+  }, [])
+
   return <SFC
 
     template=
-    {<div>
+    {<div >
 
       <div className="rooms">
         <div className="roomList">
@@ -120,26 +138,34 @@ export default function Chat() {
         </form>
       </div>
 
-      <div className="messages" >
-        {g.messages.filter(message=> message.room === g.myRoom).map(message =>
+      <div className="messages" ref={messageBottom}>
+        {g.messages.filter(message=> message.room === g.myRoom).map((message =>
+            
+
+
+
           <div 
             className={'message' + (message.author._id === g.user._id ? ' my' : '')}
             
             
              >
+               <div className="AuthorAbove">
             <p>
               {message.author.name}<br />
               <span>{formatDate(message.sent)}</span>
             </p>
-            <p>{message.text}
+            </div>
+            <p className="ChatTextCenter">{message.text}
             </p>
           </div>
-        )}
+          
+        ))}
       </div>
 
+<div className="spaceBetween"></div>
       <div className="writeMessage">
-        <img className="catJump" src={Catjump}></img>
-        <form className="messageForm" autoComplete="off" onSubmit={send}>
+      {/* <img className="catJump" src={Catjump}></img>*/}
+        <form className="messageForm" autoComplete="off" onSubmit={send} >
           <div className="chatbox">
             <input type="text" className="chatcontrol" placeholder="Write message" {...s.bind('message')} />
             <div className="input-group-append">
