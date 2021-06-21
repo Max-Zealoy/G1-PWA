@@ -68,3 +68,12 @@ input{
 
     margin-top: 400px;
 }
+
+
+@media all and (max-width: 768px) {
+
+#uploadPic{
+    padding-top: 0px
+
+}
+}
