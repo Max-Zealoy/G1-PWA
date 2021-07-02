@@ -41,10 +41,9 @@ app.post('/api/subscribe', (req, res) => {
 // Add logic to handle SSE (Server Sent Events)
 require('./SSE-handler')(app);
 
-const app = express();
 // Ask the web server to serve the static files in dist
 app.use(express.static(path.join(__dirname, '../dist')));
 
-let port = process.env.PORT || 4100;
+let port = process.env.PORT || 4040;
 // Start the Express web server
 app.listen(port, () => console.log('Listening on port ' + port));
