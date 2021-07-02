@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import Chatbubble from '../images/Buttons/Chatbubble.png'
-import Megaphone from '../images/Buttons/notification.png'
+import Chatbubble from './images/Buttons/Chatbubble.png'
+import Megaphone from './images/Buttons/notification.png'
 
 
 export default function NavButton() {
