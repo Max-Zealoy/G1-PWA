@@ -5,10 +5,19 @@ const { app } = require('mongoosy')({
   expressJson: {
     limit: '100mb'
   },
-  connect: {
-    url: require('./settings/dontCommit.json').atlasUrl
-  },
+ 
+  //Local
+ //  connect: {
+  //  url: require('./settings/dontCommit.json').atlasUrl
+  // },
   // Please change the salt before creating any users
+
+    //Heroku
+
+    connect: {
+        url: require('process.env.atlasUrl') || ('./settings/dontCommit.json').atlasUrl
+       },
+
   login: {
     encryptionSalt: 'unique and hard to guess'
   }
