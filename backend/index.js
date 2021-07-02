@@ -14,9 +14,8 @@ const { app } = require('mongoosy')({
 
     //Heroku
 
-    connect: {
-        url: require('process.env.atlasUrl') || ('./settings/dontCommit.json').atlasUrl
-       },
+    connect:('process.env.atlasUrl')
+      ,
 
   login: {
     encryptionSalt: 'unique and hard to guess'
