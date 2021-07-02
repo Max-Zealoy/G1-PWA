@@ -44,6 +44,6 @@ require('./SSE-handler')(app);
 // Ask the web server to serve the static files in dist
 app.use(express.static(path.join(__dirname, '../dist')));
 
-let port = process.env.PORT || 4040;
+let port = process.env.PORT || 3000;
 // Start the Express web server
 app.listen(port, () => console.log('Listening on port ' + port));
