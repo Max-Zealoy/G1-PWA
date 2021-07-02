@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import Chatbubble from '../images/Buttons/Chatbubble.png'
+import Chatbubble from '../images/Buttons/ChatBubble.png'
 import Megaphone from '../images/Buttons/notification.png'
 
 
